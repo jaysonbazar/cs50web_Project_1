@@ -55,7 +55,11 @@ def search(request):
         if form.is_valid():
             search = form.cleaned_data["search"]
             for entry in util.list_entries():
-                if search.lower() in entry.lower():
+                
+                if search.lower() == entry.lower():
+                    return HttpResponseRedirect(f'/wiki/{search}')
+                    
+                elif search.lower() in entry.lower():
                     similar.append(entry)
 
             if not similar:
