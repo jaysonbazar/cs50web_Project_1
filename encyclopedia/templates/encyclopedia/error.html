@@ -1,0 +1,11 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Encyclopedia
+{% endblock %}
+
+{% block body %}
+    {% for none in empty %}
+        <h1>{{none}}</h1>
+    {% endfor %}
+{% endblock %}
